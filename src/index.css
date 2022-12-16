@@ -1,13 +1,156 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    margin-top: 0;
+    margin-left: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html{
+    overflow-x: hidden;
+}
+
+/*====================[Header styling]=========================================================*/
+.header{
+    width: 100vw;
+    height: 5vh;
+    background-color: rgb(225, 38, 38);
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.earth-holder{
+    aspect-ratio: 1/1;
+    height: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.earth{
+    width: 100%;
+    height: 100%;
+}
+
+.title{
+    margin: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 10px;
+}
+
+/*====================[Card styling]=========================================================*/
+.card{
+    background-color: antiquewhite;
+    border: solid grey 4px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgb(42, 42, 42);
+    width: 900px;
+    height: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    display: grid;
+    grid-template-rows: 10% 15% 20% 55%;
+    grid-template-columns: 30% 66.2%;
+    column-gap: 2%;
+    grid-template-areas: 
+    'picture location'
+    'picture title'
+    'picture date'
+    'picture description';
+}
+
+.card--locationDetails{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items:baseline;
+    grid-area: location;
+}
+
+.card--imageHolder{
+    aspect-ratio: 2/3;
+    height: 100%;
+    grid-area: picture;
+}
+
+.card--image{
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.card--locationIcon{
+    margin-top: auto;
+    margin-bottom: 3px;
+    width: 12px;
+    height: 12px;
+    padding-right: 5px;
+}
+
+.card--location{
+    color: gray;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-right: 8px;
+}
+
+.card--googleLink{
+    color: grey;
+    margin-top: auto;
+}
+
+.card--specificLocation{
+    grid-area: title;
+}
+
+.card--tripDates{
+    font-size: small;
+    margin-top: -70px;
+    grid-area: date;
+}
+
+.card--description{
+    width: 100%;
+    height: 100%;
+    margin-top: -120px;
+    grid-area: description;
+}
+
+
+/*====================[Footer styling]=========================================================*/
+.footer{
+    width: 100vw;
+    height: 8vh;
+    background-color: rgb(225, 38, 38);
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: -8px;
+}
+
+.sm-list{
+    width: 100%;
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.creator{
+    margin-bottom: 0;
+    font-size: larger;
+    font-style: italic;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 10px;
+}
+
+svg{
+    padding-left: 50px;
 }

@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import {createRoot} from 'react-dom/client';
+import Header from "./componets/Header";
+import Card from "./componets/Card";
+import Footer from "./componets/Footer";
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import data from "./data";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function Page(){
+    const Cards = data.map(x => {
+        return <Card
+            key={x.id}
+            {...x}
+        />;
+    })
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    return(
+        <div>
+            <Header />
+            <div className="card-tray">
+                {Cards}
+            </div>
+            <Footer />
+        </div>
+    );
+}
+
+const root = createRoot(document.getElementById('root'));
+root.render(<Page />);
